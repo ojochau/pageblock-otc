@@ -1,0 +1,96 @@
+{
+    "env": "testnet",
+    "logo": "logo",
+    "main": "@modules/main",
+    "assets": "@modules/assets",
+    "moduleDir": "modules",
+    "modules": {
+        "@modules/assets": {
+            "path": "assets",
+            "dependencies": []
+        },
+        "@modules/global": {
+            "path": "global",
+            "dependencies": [
+                "@ijstech/eth-wallet",
+                "@scom/oswap-openswap-contract"
+            ]
+        },
+        "@modules/store": {
+            "path": "store",
+            "dependencies": [
+                "@ijstech/eth-wallet",
+                "@scom/oswap-openswap-contract",
+                "@modules/global",
+                "@modules/assets",
+                "@ijstech/eth-contract"
+            ]
+        },
+        "@modules/otc-queue-utils": {
+            "path": "otc-queue-utils",
+            "dependencies": [
+                "@modules/global",
+                "@ijstech/eth-wallet",
+                "@ijstech/eth-contract",
+                "@modules/assets",
+                "@modules/store",
+                "@scom/oswap-openswap-contract",
+                "@scom/commission-proxy",
+                "@scom/oswap-chainlink-contract"
+            ]
+        },
+        "@modules/alert": {
+            "path": "alert",
+            "dependencies": [
+                "@ijstech/eth-wallet",
+                "@scom/oswap-openswap-contract",
+                "@modules/global",
+                "@ijstech/eth-contract",
+                "@modules/store",
+                "@modules/assets"
+            ]
+        },
+        "@modules/panel-config": {
+            "path": "panel-config",
+            "dependencies": [
+                "@ijstech/eth-wallet",
+                "@scom/oswap-openswap-contract",
+                "@modules/global",
+                "@modules/store",
+                "@modules/alert",
+                "@ijstech/eth-contract",
+                "@scom/oswap-chainlink-contract",
+                "@scom/commission-proxy",
+                "@modules/otc-queue-utils",
+                "@modules/assets"
+            ]
+        },
+        "@modules/main": {
+            "path": "main",
+            "dependencies": [
+                "@ijstech/eth-wallet",
+                "@modules/assets",
+                "@scom/oswap-openswap-contract",
+                "@modules/global",
+                "@ijstech/eth-contract",
+                "@modules/store",
+                "@scom/oswap-chainlink-contract",
+                "@scom/commission-proxy",
+                "@modules/otc-queue-utils",
+                "@modules/alert",
+                "@modules/panel-config"
+            ]
+        }
+    },
+    "dependencies": {
+        "@ijstech/eth-wallet": "*",
+        "@ijstech/eth-contract": "*",
+        "@scom/commission-proxy": "*",
+        "@scom/oswap-chainlink-contract": "*",
+        "@scom/oswap-openswap-contract": "*"
+    },
+    "proxyAddresses": {
+        "97": "0x36c6E2430c211aeB7b606a44acB8eb8Fd6279e88",
+        "43113": "0x44ef4Ff71043f491ED6D69C61aF97eaA66f76CFb"
+    }
+}
